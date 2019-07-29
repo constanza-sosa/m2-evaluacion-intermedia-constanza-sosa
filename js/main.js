@@ -3,16 +3,21 @@ const input = document.querySelector('.input__text');
 const button = document.querySelector('.input__button');
 const clue = document.querySelector('.input__clue');
 const myRandomNumber = getRandomNumber(100);
+let howManyTimes = 0;
+const growingCounter = growCounter;
 console.log(`Mi número aleatorio es ${myRandomNumber}`);
 
 function getRandomNumber(max) {
   return Math.ceil(Math.random() * max);
 }
 
+function growCounter(){
+return howManyTimes++;
+}
+
 function playWithNumber(event){
   let myInputNumber = parseInt(input.value);
   console.log(`Mi número introducido es ${myInputNumber}`);
-  const howManyTimes = 0;
 
   if (myInputNumber === myRandomNumber){
     clue.innerHTML = '¡HAS GANADO, CAMPEONA!';
@@ -24,11 +29,7 @@ function playWithNumber(event){
     clue.innerHTML = 'Demasiado bajo';
   }
 
-  // for (let i = 0; i < 10; i++) {
-  //   counter.innerHTML += howManyTimes;
-  // }
-
-  counter.innerHTML += howManyTimes;
+  counter.innerHTML = growingCounter();
 
 }
 
