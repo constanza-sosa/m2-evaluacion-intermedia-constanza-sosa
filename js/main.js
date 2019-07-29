@@ -12,6 +12,7 @@ function getRandomNumber(max) {
 function playWithNumber(event){
   let myInputNumber = parseInt(input.value);
   console.log(`Mi número introducido es ${myInputNumber}`);
+  const howManyTimes = 0;
 
   if (myInputNumber === myRandomNumber){
     clue.innerHTML = '¡HAS GANADO, CAMPEONA!';
@@ -22,6 +23,14 @@ function playWithNumber(event){
   else{
     clue.innerHTML = 'Demasiado bajo';
   }
+
+  // for (let i = 0; i < 10; i++) {
+  //   counter.innerHTML += howManyTimes;
+  // }
+
+  counter.innerHTML += howManyTimes;
+
 }
+
 
 button.addEventListener('click', playWithNumber);
