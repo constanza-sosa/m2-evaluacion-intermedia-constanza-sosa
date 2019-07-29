@@ -1,8 +1,27 @@
 .body{
   margin: 0;
   padding: 0;
+  background-color: grey;
+  font-family: sans-serif;
 }
 .page{
-  background-color: grey;
   height: 100vh;
+  margin: 15px 15px;
+}
+
+.title {
+  margin: 0;
+ }
+.counter {
+  color: red;
+
+ }
+
+.input__text, .input__label {
+  display: block;
+ }
+.input__button { }
+.input__clue { 
+  display: block;
+  border: 1px solid white;
 }
