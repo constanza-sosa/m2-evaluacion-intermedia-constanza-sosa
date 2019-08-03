@@ -23,7 +23,10 @@ function playWithNumber(event){
   let myInputNumber = parseInt(input.value);
   console.log(`Mi número introducido es ${myInputNumber}`);
   
-  if (myInputNumber < 0 || myInputNumber > 100){
+  if (isNaN(myInputNumber) === true ){
+    clue.innerHTML = '¡Tienes que introducir un numero del 0 al 100 para jugar¡😃';
+  }
+  else if (myInputNumber < 0 || myInputNumber > 100){
     clue.innerHTML = 'Tienes que introducir un número entre 0 y 100 --> No hagas trampa';
   }
   else if (myInputNumber === myRandomNumber){
@@ -49,7 +52,8 @@ function playAgain(){
   counter = 0;
   input.value = '';
   counterDisplay.innerHTML = counter;
-  clue.innerHTML = 'Escribe un número y dale a prueba'
+  clue.innerHTML = 'Escribe un número y dale a prueba';
+  guessText.innerHTML = '';
 }
 
 function seeNumber(){
