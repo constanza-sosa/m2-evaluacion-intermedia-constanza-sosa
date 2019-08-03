@@ -1,3 +1,5 @@
+'use strict';
+
 const counter = document.querySelector('.counter');
 const input = document.querySelector('.input__text');
 const button = document.querySelector('.input__button');
