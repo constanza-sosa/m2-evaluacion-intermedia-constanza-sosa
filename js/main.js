@@ -1,21 +1,18 @@
 'use strict';
 
-const counter = document.querySelector('.counter');
+const counterDisplay = document.querySelector('.counter');
 const input = document.querySelector('.input__text');
 const button = document.querySelector('.input__button');
 const clue = document.querySelector('.input__clue');
-const myRandomNumber = getRandomNumber(100);
-let howManyTimes = 0;
-const growingCounter = growCounter;
-console.log(`Mi número aleatorio es ${myRandomNumber}`);
+
+// let counter = 0;
 
 function getRandomNumber(max) {
   return Math.ceil(Math.random() * max);
 }
 
-function growCounter(){
-return howManyTimes++;
-}
+const myRandomNumber = getRandomNumber(100);
+console.log(`Mi número aleatorio es ${myRandomNumber}`);
 
 function playWithNumber(event){
   let myInputNumber = parseInt(input.value);
@@ -31,7 +28,11 @@ function playWithNumber(event){
     clue.innerHTML = 'Demasiado bajo';
   }
 
-  counter.innerHTML = growingCounter();
+  if (myInputNumber < 0 || myInputNumber > 100){
+    clue.innerHTML = 'Tienes que introducir un número entre 0 y 100 --> No hagas trampa';
+  }
+
+  counterDisplay.innerHTML = counter;
 
 }
 
