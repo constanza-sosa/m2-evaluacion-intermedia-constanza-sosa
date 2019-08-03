@@ -12,6 +12,7 @@ const popup = document.querySelector(".popup");
 const popupButton = document.querySelector(".start__button");
 const nameInput = document.querySelector(".input__name");
 const popupCloseButton = document.querySelector(".close__button");
+// const listNumber = document.querySelector('.list__number')
 
 let counter = 0;
 
@@ -25,6 +26,13 @@ console.log(`Mi número aleatorio es ${myRandomNumber}`);
 function playWithNumber(event) {
   let myInputNumber = parseInt(input.value);
   console.log(`Mi número introducido es ${myInputNumber}`);
+  // const numberArray = [];
+  // // content = '';
+
+  // for (let i= 0; i<numberArray; i++){
+  //   numberArray.push(myInputNumber);
+  //   listNumber.innerHTML += numberArray;
+  // }
 
   if (isNaN(myInputNumber) === true) {
     clue.innerHTML =

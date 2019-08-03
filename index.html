@@ -4,26 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/styles.css" />
     <title>Evaluacion Intermedia CSG</title>
   </head>
   <body class="body">
     <div class="page">
       <div class="popup">
-        ¿Cómo te llamas?
-        <input type="text" class="input__name">
+        <label for="input__name">¿Cómo te llamas?</label>
+        <input type="text" class="input__name" id="input__name" />
         <button class="start__button">Comenzar</button>
         <button class="close__button">X</button>
       </div>
       <h1 class="title">Adivina el número</h1>
       <p class="counter">0</p>
       <div class="input__container">
-        <label for="input" class="input__label" >Introduce aquí tu número:</label>
-        <input type="text" id="input" class="input__text" placeholder="Entre 0 y 100" />
+        <label for="input" class="input__label"
+          >Introduce aquí tu número:</label>
+        <input
+          type="text"
+          id="input"
+          class="input__text"
+          placeholder="Entre 0 y 100"
+        />
       </div>
       <button type="button" class="input__button">Prueba</button>
       <p class="input__clue">Escribe un número y dale a prueba</p>
+      <ul class="list__number"></ul>
       <button type="button" class="play__button">Juega otra vez</button>
       <button type="button" class="guess__button">Ver el número</button>
       <p class="guess_text"></p>
