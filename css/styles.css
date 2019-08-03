@@ -3,10 +3,13 @@
   padding: 0;
   background-color: grey;
   font-family: 'Indie Flower', cursive;
+  text-align: center;
+  
 }
 .page{
   height: 100vh;
   margin: 15px 15px;
+  border-radius: 22px;
 }
 
 .title {
@@ -18,7 +21,7 @@
  }
 
 .input__text, .input__label {
-  display: block;
+  display: inline-block;
   font-family: 'Indie Flower', cursive;
  }
 .input__button { 
@@ -28,4 +31,29 @@
 .input__clue { 
   display: block;
   border: 1px solid white;
+}
+
+.popup{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  position: relative;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: beige;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.hidden{
+  display: none;
+}
+
+.input__name{
+  z-index: 2;
 }
