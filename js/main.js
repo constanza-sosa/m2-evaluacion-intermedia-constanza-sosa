@@ -28,20 +28,23 @@ function writeArray(){
   let content = '';
   for (let i = 0; i < numberArray.length; i++){
     if (numberArray.length === 1){
+      content = 'El numero introducido es:';
       content += `
       <li class="list__item list__item${i} complete">
-      El numero introducido es: ${numberArray[i]}
+        ${numberArray[i]}
       </li>
       `  
-      }
+      listNumber.innerHTML = content;
+    }
     else{
+      content = 
       content += `
       <li class="list__item list__item${i} complete">
-      Los numeros son: ${numberArray}
+        ${numberArray[i]}
       </li> 
       `
-      }
-    listNumber.innerHTML = content;
+      listNumber.innerHTML = `Los numeros introducidos son: ${content}`;
+    }
   }
 }
 

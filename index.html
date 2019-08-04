@@ -14,13 +14,19 @@
   <body class="body">
     <div class="page">
       <div class="popup">
-        <label for="input__name">¿Cómo te llamas?</label>
-        <input type="text" class="input__name" id="input__name" />
+        <p class="popup__text">¿Estás list@?</p>
+        <div>
+          <label for="input__name" class="input__label-popup">¿Cómo te llamas?</label>
+          <input type="text" class="input__name" id="input__name" />
+        </div>
         <button class="start__button">Comenzar</button>
         <button class="close__button">X</button>
       </div>
       <h1 class="title">Adivina el número</h1>
-      <p class="counter">0</p>
+      <div class="counter__container">
+        <p class="counter__title">Numero de intentos:</p>
+        <p class="counter">0</p>
+      </div>
       <div class="input__container">
         <label for="input" class="input__label"
           >Introduce aquí tu número:</label>
