@@ -23,26 +23,28 @@
         <button class="close__button">X</button>
       </div>
       <h1 class="title">Adivina el número</h1>
-      <div class="counter__container">
-        <p class="counter__title">Numero de intentos:</p>
-        <p class="counter">0</p>
-      </div>
       <div class="input__container">
         <label for="input" class="input__label"
-          >Introduce aquí tu número:</label>
+        >Introduce aquí tu número:</label>
         <input
-          type="text"
-          id="input"
-          class="input__text"
-          placeholder="Entre 0 y 100"
+        type="text"
+        id="input"
+        class="input__text"
+        placeholder="Entre 0 y 100"
         />
       </div>
       <button type="button" class="input__button">Prueba</button>
       <p class="input__clue">Escribe un número y dale a prueba</p>
+      <div class="counter__container">
+        <p class="counter__title">Número de intentos:</p>
+        <p class="counter">0</p>
+      </div>
       <ul class="list__number"></ul>
-      <button type="button" class="play__button">Juega otra vez</button>
-      <button type="button" class="guess__button">Ver el número</button>
-      <p class="guess_text"></p>
+      <div class="button-container">
+        <button type="button" class="play__button">Juega otra vez</button>
+        <button type="button" class="guess__button">Ver el número</button>
+      </div>
+      <p class="guess__text"></p>
     </div>
     <script src="js/main.js"></script>
   </body>

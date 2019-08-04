@@ -6,7 +6,7 @@ const button = document.querySelector(".input__button");
 const clue = document.querySelector(".input__clue");
 const reset = document.querySelector(".play__button");
 const guess = document.querySelector(".guess__button");
-const guessText = document.querySelector(".guess_text");
+const guessText = document.querySelector(".guess__text");
 const label = document.querySelector(".input__label");
 const popup = document.querySelector(".popup");
 const popupButton = document.querySelector(".start__button");
@@ -27,23 +27,29 @@ console.log(`Mi número aleatorio es ${myRandomNumber}`);
 function writeArray(){
   let content = '';
   for (let i = 0; i < numberArray.length; i++){
-    if (numberArray.length === 1){
-      content = 'El numero introducido es:';
+    if (isNaN(numberArray[i])=== true){
+      if (numberArray.length === 1){
+        listNumber.innerHTML = content;
+      }
+      else {
+        listNumber.innerHTML =  `<p class="list__title">Los numeros introducidos son:</p> ${content}`;
+      }
+    }
+    else if (numberArray.length === 1){
       content += `
       <li class="list__item list__item${i} complete">
         ${numberArray[i]}
       </li>
       `  
-      listNumber.innerHTML = content;
+      listNumber.innerHTML = `<p class="list__title">El numero introducido es:</p> ${content}`;
     }
     else{
-      content = 
       content += `
       <li class="list__item list__item${i} complete">
         ${numberArray[i]}
       </li> 
       `
-      listNumber.innerHTML = `Los numeros introducidos son: ${content}`;
+      listNumber.innerHTML = `<p class="list__title">Los numeros introducidos son:</p> ${content}`;
     }
   }
 }
@@ -53,30 +59,33 @@ function playWithNumber(event) {
   let myInputNumber = parseInt(input.value);
   console.log(`Mi número introducido es ${myInputNumber}`);
 
-  
   if (isNaN(myInputNumber) === true) {
     clue.innerHTML =
     "¡Tienes que introducir un numero del 0 al 100 para jugar! 😃";
+    numberArray.push(myInputNumber);
+    numberArray.pop(myInputNumber);
   } else if (myInputNumber < 0 || myInputNumber > 100) {
     clue.innerHTML =
-    "Tienes que introducir un número entre 0 y 100 --> No hagas trampa";
+    "Tienes que introducir un número entre 0 y 100 --> No hagas trampa 🙃";
+    numberArray.push(myInputNumber);
   } else if (myInputNumber === myRandomNumber) {
     if (counter === 1) {
-      clue.innerHTML = `¡Enhorabuena, ${name}! </br> Lo has conseguido en ${counter} intento`;
+      clue.innerHTML = `🎉🎉 ¡Enhorabuena, ${name}! 🎉🎉</br> Lo has conseguido en ${counter} intento`;
     } else {
-      clue.innerHTML = `¡Enhorabuena, ${name}! </br> Lo has conseguido en ${counter} intentos`;
+      clue.innerHTML = `🎉🎉 ¡Enhorabuena, ${name}! 🎉🎉 </br> Lo has conseguido en ${counter} intentos`;
     }
   } else if (myInputNumber > myRandomNumber) {
-    clue.innerHTML = "Demasiado alto";
+    clue.innerHTML = "⚠️ Pista: Demasiado alto ⚠️";
     counter++;
+    numberArray.push(myInputNumber);
   } else {
-    clue.innerHTML = "Demasiado bajo";
+    clue.innerHTML = "⚠️ Pista: Demasiado bajo ⚠️";
     counter++;
+    numberArray.push(myInputNumber);
   }
   
   counterDisplay.innerHTML = counter;
   
-  numberArray.push(myInputNumber);
   writeArray();
   console.log(numberArray);
 }
