@@ -24,6 +24,28 @@ function getRandomNumber(max) {
 let myRandomNumber = getRandomNumber(100);
 console.log(`Mi número aleatorio es ${myRandomNumber}`);
 
+function writeArray(){
+  let content = '';
+  for (let i = 0; i < numberArray.length; i++){
+    if (numberArray.length === 1){
+      content += `
+      <li class="list__item list__item${i} complete">
+      El numero introducido es: ${numberArray[i]}
+      </li>
+      `  
+      }
+    else{
+      content += `
+      <li class="list__item list__item${i} complete">
+      Los numeros son: ${numberArray}
+      </li> 
+      `
+      }
+    listNumber.innerHTML = content;
+  }
+}
+
+
 function playWithNumber(event) {
   let myInputNumber = parseInt(input.value);
   console.log(`Mi número introducido es ${myInputNumber}`);
@@ -52,12 +74,8 @@ function playWithNumber(event) {
   counterDisplay.innerHTML = counter;
   
   numberArray.push(myInputNumber);
-  if (numberArray.length === 1){
-    listNumber.innerHTML = `El numero introducido es: ${numberArray}`;
-  }
-  else{
-    listNumber.innerHTML = `Los numeros introducidos son: ${numberArray}`;
-  }
+  writeArray();
+  console.log(numberArray);
 }
 
 function playAgain() {
