@@ -12,7 +12,9 @@ const popup = document.querySelector(".popup");
 const popupButton = document.querySelector(".start__button");
 const nameInput = document.querySelector(".input__name");
 const popupCloseButton = document.querySelector(".close__button");
-// const listNumber = document.querySelector('.list__number')
+const listNumber = document.querySelector('.list__number')
+
+let numberArray = [];
 
 let counter = 0;
 
@@ -26,20 +28,14 @@ console.log(`Mi número aleatorio es ${myRandomNumber}`);
 function playWithNumber(event) {
   let myInputNumber = parseInt(input.value);
   console.log(`Mi número introducido es ${myInputNumber}`);
-  // const numberArray = [];
-  // // content = '';
 
-  // for (let i= 0; i<numberArray; i++){
-  //   numberArray.push(myInputNumber);
-  //   listNumber.innerHTML += numberArray;
-  // }
-
+  
   if (isNaN(myInputNumber) === true) {
     clue.innerHTML =
-      "¡Tienes que introducir un numero del 0 al 100 para jugar! 😃";
+    "¡Tienes que introducir un numero del 0 al 100 para jugar! 😃";
   } else if (myInputNumber < 0 || myInputNumber > 100) {
     clue.innerHTML =
-      "Tienes que introducir un número entre 0 y 100 --> No hagas trampa";
+    "Tienes que introducir un número entre 0 y 100 --> No hagas trampa";
   } else if (myInputNumber === myRandomNumber) {
     if (counter === 1) {
       clue.innerHTML = `¡Enhorabuena, ${name}! </br> Lo has conseguido en ${counter} intento`;
@@ -53,8 +49,16 @@ function playWithNumber(event) {
     clue.innerHTML = "Demasiado bajo";
     counter++;
   }
-
+  
   counterDisplay.innerHTML = counter;
+  
+  numberArray.push(myInputNumber);
+  if (numberArray.length === 1){
+    listNumber.innerHTML = `El numero introducido es: ${numberArray}`;
+  }
+  else{
+    listNumber.innerHTML = `Los numeros introducidos son: ${numberArray}`;
+  }
 }
 
 function playAgain() {
