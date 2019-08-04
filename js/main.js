@@ -22,7 +22,6 @@ function getRandomNumber(max) {
 }
 
 let myRandomNumber = getRandomNumber(100);
-console.log(`Mi número aleatorio es ${myRandomNumber}`);
 
 function writeArray(){
   let content = '';
@@ -57,7 +56,6 @@ function writeArray(){
 
 function playWithNumber(event) {
   let myInputNumber = parseInt(input.value);
-  console.log(`Mi número introducido es ${myInputNumber}`);
 
   if (isNaN(myInputNumber) === true) {
     clue.innerHTML =
@@ -87,12 +85,10 @@ function playWithNumber(event) {
   counterDisplay.innerHTML = counter;
   
   writeArray();
-  console.log(numberArray);
 }
 
 function playAgain() {
   myRandomNumber = getRandomNumber(100);
-  console.log(`Mi número aleatorio es ${myRandomNumber}`);
   counter = 0;
   input.value = '';
   counterDisplay.innerHTML = counter;
@@ -115,7 +111,6 @@ function hidePopup(event) {
   const parentA = event.currentTarget.parentElement;
   parentA.classList.add('hidden');
   name = nameInput.value;
-  console.log(name);
   if (name === '') {
     label.innerHTML = `Hola, introduce aquí tu número:`;
   } else {
