@@ -15,7 +15,6 @@ const popupCloseButton = document.querySelector(".close__button");
 const listNumber = document.querySelector('.list__number')
 
 let numberArray = [];
-
 let counter = 0;
 
 function getRandomNumber(max) {
@@ -71,6 +70,8 @@ function playAgain() {
   guessText.innerHTML = "";
   popup.classList.remove("hidden");
   nameInput.value = "";
+  numberArray = [];
+  listNumber.innerHTML = '';
 }
 
 function seeNumber() {
